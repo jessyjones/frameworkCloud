@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Bhavesh Kakwani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -110.5, "left": 158.2, "attrs": {} },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": -53.37,
+      "left": -145.81,
+      "rotate": 270,
+      "attrs": { "pixels": "17" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ring1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ring1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "ring1:DIN", "esp:D13", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
